@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "disneyChallengeSong"
+  "defaultProject": "disneyChallengeSong",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -3,14 +3,32 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { UtilisateurComponent } from './utilisateur/utilisateur.component';
+import { LoginComponent } from './utilisateur/login/login.component';
+import { UpdateUtilisateurComponent } from './utilisateur/update-utilisateur/update-utilisateur.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { RegisterComponent } from './utilisateur/register/register.component';
+import { CarteComponent } from './carte/carte.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UtilisateurComponent,
+    LoginComponent,
+    UpdateUtilisateurComponent,
+    NotFoundComponent,
+    NavbarComponent,
+    RegisterComponent,
+    CarteComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,21 @@
+<div class="containerRegister">
+  <div class="ConnectionBlock Block">
+    <h2 class="titleConnection">Connection :</h2>
+    <form class="formulaireBlock">
+      <label for="">Pseudo:</label>
+      <input type="text" class="inputBlock" placeholder="Pseudo">
+      <label for="">Password:</label>
+      <input type="password" class="inputBlock" placeholder="Password">
+      <div class="EnregistrementBtn">
+        <button type="submit" class="enregistrerBtn">Se Connecter</button>
+      </div>
+      <div class="EnregistrementBtn">
+        <a class="lienConnecter" routerLink="">pas encore de compte ? s'enregristrer</a>
+      </div>
+    </form>
+  </div>
+  <div class="explicationBlock Block">
+    <h2 class="titleRegle"> {{ service.Enonce.title }} :</h2>
+    <p>{{service.Enonce.description}}</p>
+  </div>
+</div>

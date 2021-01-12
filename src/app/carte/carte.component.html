@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="contenuJeu">
+    <div class="timer Block">
+      {{ temps }}
+    </div>
+    <div class="carte Block">
+      <img src="{{ carte.url }}" alt="{{ carte.name }}" class="imageCarte">
+      <div class="nomCarte">{{ carte.name }}</div>
+    </div>
+    <div class="btnMenu">
+      <button (click)="rollCard()">relancer carte</button>
+      <button (click)="useRoue()">pas trouver</button>
+      <button (click)="testDelayWhen()">testDelayWhen</button>
+  </div>
+  </div>
+  <div class="tableauScore">
+      <div class="pseudo"> Othior <span class="score"> 1500 </span></div>
+      <div class="pseudo"> Guest644881 <span class="score"> 750 </span></div>
+      <div class="pseudo"> Guest154721 <span class="score"> 740 </span></div>
+  </div>
+
+</div>

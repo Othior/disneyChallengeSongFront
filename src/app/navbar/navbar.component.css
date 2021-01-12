@@ -1,0 +1,17 @@
+header{
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  padding: 2rem 0rem;
+  border-bottom: 1px solid white;
+}
+.titleSite{
+  font-size: 75px;
+  margin: 0px 4rem;
+}
+.userIcon{
+  margin: 0px 1rem;
+}
+.isUser{
+  font-size: 25px;
+}

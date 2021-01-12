@@ -1,0 +1,25 @@
+<div class="containerRegister">
+  <div class="registerBlock Block">
+    <h2 class="titleRegister">Enregistrement :</h2>
+    <form class="formulaireBlock">
+      <label for="">Pseudo:</label>
+      <input type="text" class="inputBlock" placeholder="Pseudo">
+      <label for="">Email:</label>
+      <input type="email" class="inputBlock" placeholder="Email">
+      <label for="">Password:</label>
+      <input type="password" class="inputBlock" placeholder="Password">
+      <label for="">Confirme Password:</label>
+      <input type="password" class="inputBlock" placeholder="Confirme password">
+      <div class="EnregistrementBtn">
+        <button type="submit" class="enregistrerBtn">S'enregistrer</button>
+      </div>
+      <div class="lienConnection">
+        <a routerLink="login">déjà un compte ? se connecter</a>
+      </div>
+    </form>
+  </div>
+  <div class="explicationBlock Block">
+    <h2 class="titleRegle"> {{ service.Enonce.title }} :</h2>
+    <p>{{service.Enonce.description}}</p>
+  </div>
+</div>
