@@ -1,5 +1,12 @@
+<div class="checkResponseUser Block displayNone">
+  <label for="" > Avez vous trouvé une phrase ou deux de la chason du personnage ?</label>
+  <div class="btnMenu">
+      <button class="isCheck" id="checkTrue" (click)="test()">Oui</button>
+      <button class="isCheck" id="checkFalse" (click)="useRoue()">Non</button>
+  </div>
+</div>
 <div class="container">
-  <div class="contenuJeu">
+  <div class="contenuJeu ">
     <div class="timer Block">
       {{ temps }}
     </div>
@@ -8,12 +15,11 @@
       <div class="nomCarte">{{ carte.name }}</div>
     </div>
     <div class="btnMenu">
-      <button (click)="rollCard()">relancer carte</button>
-      <button (click)="useRoue()">pas trouver</button>
-      <button (click)="testDelayWhen()">testDelayWhen</button>
+      <!-- <button (click)="rollCard()">relancer carte</button> -->
+      <!-- <button >Utiliser la roue</button> -->
   </div>
   </div>
-  <div class="tableauScore">
+  <div class="tableauScore ">
       <div class="pseudo"> Othior <span class="score"> 1500 </span></div>
       <div class="pseudo"> Guest644881 <span class="score"> 750 </span></div>
       <div class="pseudo"> Guest154721 <span class="score"> 740 </span></div>

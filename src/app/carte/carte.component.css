@@ -1,6 +1,7 @@
 .container{
   display: flex;
   justify-content: space-around;
+  /* position: relative; */
 }
 .contenuJeu{
   width: 80vw;
@@ -67,5 +68,28 @@
 }
 .btnMenu > button {
   text-transform: uppercase;
+}
+.checkResponseUser{
+  background:#272D33;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 40vw;
+  height: 25vh;
+  padding: 1rem;
+  top: 22rem;
+  left: 22rem;
+  position: absolute;
+}
+.containerUnder{
+  opacity: 0.5;
+}
+.displayNone{
+  display: none;
+}
+.active{
+  display: block;
+  z-index: 1;
 }
 

@@ -1,8 +1,7 @@
 import { CarteService } from './../serviceDB/carteService/carte.service';
 
 import { Component, OnInit } from '@angular/core';
-import { timer, Observable , fromEvent, interval } from 'rxjs';
-import { delayWhen } from 'rxjs/operators';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-carte',
@@ -12,8 +11,12 @@ import { delayWhen } from 'rxjs/operators';
 export class CarteComponent implements OnInit {
 
   public carte;
-  rollNumber: number;
-  temps;
+  public temps: any;
+  protected rollNumber: number;
+  public check: boolean;
+
+
+  private tempsMax: number = 30;
 
   constructor(
     private service: CarteService
@@ -22,27 +25,39 @@ export class CarteComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.testTimer();
+    this.Jeux();
+  }
+  test(){
+    const isCheck = document.querySelector("#checkTrue").innerHTML;
+    console.log("this.check => ", isCheck);
+    console.log("this.check => ", document.querySelector("#checkTrue").textContent);
+    if(document.querySelector("#checkTrue").textContent === "Oui"){
+      this.check = true;
+      console.log("oui");
+    }else {
+      console.log("non")
+    }
   }
 
-
-
-  testTimer() {
+  private Jeux() {
+    // timer fonctionne comme un setTimeout
     return timer(1000, 1000).subscribe(data => {
-      // console.log(data);
-      this.temps = data;
+      this.temps = this.tempsMax;
+      this.tempsMax--;
+      if(this.tempsMax <= 0){
+        // if(this.check)
+        console.log('temps depasser avez vous trouvez une chanson ?')
+        this.reset();
+      }
     });
   }
 
-  testDelayWhen() {
-    const clicks = fromEvent(document, 'click');
-    const delayedClicks = clicks.pipe(
-      delayWhen(event => interval(Math.random() * 30000)),
-    );
-    delayedClicks.subscribe(x => console.log(x));
+  private reset() {
+    this.tempsMax = 30;
+    this.rollCard();
   }
 
-  rollCard() {
+  private rollCard() {
     this.rollNumber = Math.floor((Math.random() * 4) + 1);
     this.service.get(this.rollNumber).toPromise()
       .then(data => {
@@ -54,6 +69,13 @@ export class CarteComponent implements OnInit {
   }
 
   useRoue() {
+    const isCheck = document.querySelector("#checkFalse").innerHTML;
+    console.log("this.check => ", isCheck);
+    console.log("this.check => ", document.querySelector("#checkFalse").innerHTML);
+    if(document.querySelector("#checkFalse").innerHTML === "Non"){
+      this.check = false;
+      console.log("vous n'avez pas trouver la chanson ... :/");
+    }
     console.log("useRoue");
   }
 

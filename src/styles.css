@@ -5,6 +5,7 @@ body{
   background: #272D33;
   color: white;
   font-family: Segoe UI;
+  position: relative;
 }
 *{
   margin: 0;
