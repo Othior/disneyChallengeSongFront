@@ -46,9 +46,8 @@
 .imageCarte {
   border-radius: 1rem 1rem 0rem 0rem;
   margin: 1rem 0rem;
-  min-width: 280px;
-  /* min-height: 50%; */
-  max-height: 80%;
+  max-width: 280px;
+  height: 300px;
 }
 .nomCarte{
   border-top: 1px solid white;

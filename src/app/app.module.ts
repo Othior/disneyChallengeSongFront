@@ -12,6 +12,7 @@ import { RegisterComponent } from './utilisateur/register/register.component';
 import { CarteComponent } from './carte/carte.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RoueComponent } from './roue/roue.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     NotFoundComponent,
     NavbarComponent,
     RegisterComponent,
-    CarteComponent
+    CarteComponent,
+    RoueComponent
   ],
   imports: [
     BrowserModule,

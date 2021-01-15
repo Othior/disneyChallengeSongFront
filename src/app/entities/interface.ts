@@ -3,7 +3,7 @@ export interface regle{
  description:string
 }
 
-export interface Carte {
+export interface Carte{
  nom: string ,
  url_image: string
 }

@@ -15,7 +15,8 @@ export class CarteComponent implements OnInit {
   protected rollNumber: number;
   public check: boolean;
 
-
+  public readonly lengthCarteArray = 30;
+  public readonly scoreGood = 125;
   private tempsMax: number = 30;
 
   constructor(
@@ -27,7 +28,8 @@ export class CarteComponent implements OnInit {
   ngOnInit(): void {
     this.Jeux();
   }
-  test(){
+
+  btnOui(){
     const isCheck = document.querySelector("#checkTrue").innerHTML;
     console.log("this.check => ", isCheck);
     console.log("this.check => ", document.querySelector("#checkTrue").textContent);
@@ -41,15 +43,31 @@ export class CarteComponent implements OnInit {
 
   private Jeux() {
     // timer fonctionne comme un setTimeout
+    const checkBlock = document.querySelector(".checkResponseUser");
     return timer(1000, 1000).subscribe(data => {
       this.temps = this.tempsMax;
       this.tempsMax--;
       if(this.tempsMax <= 0){
-        // if(this.check)
-        console.log('temps depasser avez vous trouvez une chanson ?')
-        this.reset();
+        this.temps = 0;
+        // this.reset();
+        this.verification(this.tempsMax);
       }
     });
+  }
+
+  private verification(temps){
+    const checkBlock = document.querySelector(".checkResponseUser");
+    if (temps === 0){
+      checkBlock.classList.remove("displayNone");
+      this.check = false;
+    }
+    else if(this.check){
+      checkBlock.classList.add("displayNone");
+      this.reset();
+    }else{
+      console.log("Il faut faire un choix :D");
+    }
+    // console.log(" lengthCardArray => ",this.lengthCarteArray);
   }
 
   private reset() {
@@ -58,7 +76,7 @@ export class CarteComponent implements OnInit {
   }
 
   private rollCard() {
-    this.rollNumber = Math.floor((Math.random() * 4) + 1);
+    this.rollNumber = Math.floor((Math.random() * this.lengthCarteArray) + 1);
     this.service.get(this.rollNumber).toPromise()
       .then(data => {
         this.carte = data;
@@ -78,5 +96,7 @@ export class CarteComponent implements OnInit {
     }
     console.log("useRoue");
   }
+
+
 
 }
