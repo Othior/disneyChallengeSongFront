@@ -1,4 +1,5 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { getAllLifecycleHooks } from '@angular/compiler/src/lifecycle_reflector';
 import { Injectable } from '@angular/core';
 import { DbService } from '../db.service';
 
@@ -8,6 +9,7 @@ import { DbService } from '../db.service';
 export class CarteService {
 
   public url: string;
+  public listUrl: Array<string>;
 
   constructor(
     private serviceDb: DbService ,
@@ -17,6 +19,9 @@ export class CarteService {
    }
 
    getList(){
+     // acces a la db avec notre angular
+    //  let headers = new HttpHeaders().set('Authorization','Basic flisbtklvihe');
+    //  this.http.get(this.url + '/list', { headers } );
      return this.http.get(this.url + '/list');
    }
 

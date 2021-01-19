@@ -1,17 +1,19 @@
 header{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: baseline;
-  padding: 2rem 0rem;
+  padding: 2rem;
   border-bottom: 1px solid white;
 }
 .titleSite{
   font-size: 75px;
-  margin: 0px 4rem;
+  width: 76vw;
+  text-align: center;
 }
 .userIcon{
   margin: 0px 1rem;
 }
 .isUser{
   font-size: 25px;
+  /* padding-left: 15rem; */
 }

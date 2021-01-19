@@ -13,11 +13,11 @@ export class ScoreService {
     private service: DbService,
     private client: HttpClient
   ) {
-    this.url = service.UrlDB + 'score';
+    this.url = service.UrlDB + 'score/';
   }
 
     getList(){
-
+      return this.client.get(this.url + 'list');
     }
 
     get(id: number){

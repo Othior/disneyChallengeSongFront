@@ -1,6 +1,5 @@
-
 import { Injectable } from '@angular/core';
-import { regle } from '../entities/interface';
+import { regle } from '../Model/interface';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +13,7 @@ export class ServiceService {
     devoir faire un gage à l'aide de la roue des gages`
   }
   constructor() { }
-  get Enonce():regle{
+  get Enonce(): regle{
     return this.enonce;
   }
 }

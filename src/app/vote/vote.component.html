@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="contenuJeu">
+    <h2 class="titleVote">Vote :</h2>
+    <div class="contentVote">
+      <p class="phraseVote">Qui n'a pas réussi a chanté ? :</p>
+      <div class="playerBlock" *ngFor="let item of listUser.listUser">
+        <span> {{ item.pseudo }} </span>
+        <label class="containerLabel" for="user_{{ item.pseudo }}" >
+          <input type="checkbox" name="{{ item.pseudo }}" class="resetInput"  id="user_{{ item.pseudo }}" value="{{ item.pseudo }}" />
+          <span class="checkboxVote" id="user_span_{{ item.pseudo }}" (click)="changeStatut(item.pseudo)"></span>
+        </label>
+      </div>
+    </div>
+    <div class="btnValider">
+      <button >Valider</button>
+    </div>
+  </div>
+  <app-tableau-score></app-tableau-score>
+</div>

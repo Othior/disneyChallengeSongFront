@@ -13,6 +13,8 @@ import { CarteComponent } from './carte/carte.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RoueComponent } from './roue/roue.component';
+import { VoteComponent } from './vote/vote.component';
+import { TableauScoreComponent } from './tableau-score/tableau-score.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { RoueComponent } from './roue/roue.component';
     NavbarComponent,
     RegisterComponent,
     CarteComponent,
-    RoueComponent
+    RoueComponent,
+    VoteComponent,
+    TableauScoreComponent
   ],
   imports: [
     BrowserModule,

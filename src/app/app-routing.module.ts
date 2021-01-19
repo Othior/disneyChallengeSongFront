@@ -1,3 +1,4 @@
+import { VoteComponent } from './vote/vote.component';
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -12,6 +13,8 @@ const routes: Routes = [
   // { path:'register', component:RegisterComponent },
   { path:'login', component:LoginComponent },
   { path:'carte', component:CarteComponent },
+  { path:'vote' , component: VoteComponent },
+  { path:'roue' , component: RoueComponent },
   { path:'roue', component:RoueComponent },
   { path: '**' , component: NotFoundComponent }
 ];
