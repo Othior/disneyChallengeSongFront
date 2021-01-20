@@ -11,6 +11,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RegisterComponent } from './utilisateur/register/register.component';
 import { CarteComponent } from './carte/carte.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { RoueComponent } from './roue/roue.component';
 import { VoteComponent } from './vote/vote.component';
@@ -32,6 +33,7 @@ import { TableauScoreComponent } from './tableau-score/tableau-score.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,

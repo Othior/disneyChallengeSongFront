@@ -1,7 +1,19 @@
 
 <div class="container">
-  <div class="carte Block" *ngFor="let item of carte">
+  <!-- <div class="carte Block" *ngFor="let item of carte">
     <img src="{{ item.url }}" alt="{{ item.name }}" class="imageCarte">
     <div class="nomCarte">{{ item.name }}</div>
+  </div> -->
+  <div class="contenuJeu">
+    <h2 class="titleGage"> Gage : </h2>
+    <div class="gageBlock">
+      <div class="gageMessage slideInDown">{{ roue.gage }}</div>
+    </div>
+    <div class="btnMenu">
+      <button (click)="Gage()">Recevoir un autre Gage</button>
+      <button (click)="cartePage()">Retourner jouer</button>
+    </div>
   </div>
+
+  <app-tableau-score></app-tableau-score>
 </div>
