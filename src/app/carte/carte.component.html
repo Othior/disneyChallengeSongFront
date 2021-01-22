@@ -13,12 +13,12 @@
     <div class="timer Block">
       {{ temps }}
     </div>
-    <div class="carte Block">
+    <div class="carte Block" *ngIf="carte !== undefined">
       <img src="{{ carte.url }}" alt="{{ carte.name }}" class="imageCarte">
       <div class="nomCarte">{{ carte.name }}</div>
     </div>
     <div class="btnMenu">
-      <!-- <button (click)="rollCard()">relancer carte</button> -->
+      <!-- <button (click)="reset()">relancer carte</button> -->
       <!-- <button >Utiliser la roue</button> -->
   </div>
   </div>

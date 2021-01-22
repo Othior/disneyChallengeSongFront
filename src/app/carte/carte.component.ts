@@ -13,14 +13,12 @@ export class CarteComponent implements OnInit {
 
   public carte;
   protected rollNumber: number;
-  public check: boolean;
   public temps: number;
 
-  public timmer;
+  public timmer; // contient la boucle du temps et permet aussi de la stoper
 
   public readonly lengthCarteArray = 30;
-  public readonly scoreGood = 125;
-  private readonly tempsMax: number = 15;
+  private readonly tempsMax: number = 30;
 
   constructor(
     private service: CarteService,
@@ -35,9 +33,11 @@ export class CarteComponent implements OnInit {
   }
 
   // function qui recommence tout change la carte mais aussi remet le temps aux max
-  private reset() {
+  public reset() {
+
     this.timerJeu(this.tempsMax);
     this.rollCard();
+
   }
 
   // function pour le jeu qui fait appelle aux function timerJeu et rollCard

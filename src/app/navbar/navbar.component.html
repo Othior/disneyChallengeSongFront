@@ -1,8 +1,11 @@
 <header>
   <h1 class="titleSite">Disney Challenge Song</h1>
   <div class="isUser">
-    <span>Othior</span>
-    <label class="userIcon">
+    <span>{{ isUser() }}</span>
+    <label class="userIcon" *ngIf="user !== null">
+      <i class="fas fa-user-times"></i>
+    </label>
+    <label class="userIcon" *ngIf="user === null">
       <i class="fa fa-user"></i>
     </label>
   </div>

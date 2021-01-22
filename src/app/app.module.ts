@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RoueComponent } from './roue/roue.component';
 import { VoteComponent } from './vote/vote.component';
 import { TableauScoreComponent } from './tableau-score/tableau-score.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { TableauScoreComponent } from './tableau-score/tableau-score.component';
     CarteComponent,
     RoueComponent,
     VoteComponent,
-    TableauScoreComponent
+    TableauScoreComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

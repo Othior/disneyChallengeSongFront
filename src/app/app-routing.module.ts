@@ -7,6 +7,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { RoueComponent } from './roue/roue.component';
 import { LoginComponent } from './utilisateur/login/login.component';
 import { RegisterComponent } from './utilisateur/register/register.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   { path:'', component:RegisterComponent },
@@ -15,7 +16,7 @@ const routes: Routes = [
   { path:'carte', component:CarteComponent },
   { path:'vote' , component: VoteComponent },
   { path:'roue' , component: RoueComponent },
-  { path:'roue', component:RoueComponent },
+  { path:'home', component:HomeComponent },
   { path: '**' , component: NotFoundComponent }
 ];
 

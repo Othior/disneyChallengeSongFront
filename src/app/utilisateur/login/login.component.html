@@ -1,11 +1,24 @@
 <div class="containerRegister">
   <div class="ConnectionBlock Block">
     <h2 class="titleConnection">Connection :</h2>
-    <form class="formulaireBlock">
+    <form class="formulaireBlock" #f="ngForm" (ngSubmit)="login(f)" novalidate>
       <label for="">Pseudo:</label>
-      <input type="text" class="inputBlock" placeholder="Pseudo">
+      <input
+        #model="ngModel"
+        ngModel
+        name="pseudo"
+        type="text"
+        class="inputBlock"
+        placeholder="Pseudo"
+      >
       <label for="">Password:</label>
-      <input type="password" class="inputBlock" placeholder="Password">
+      <input
+        type="password"
+        class="inputBlock"
+        placeholder="Password"
+        ngModel
+        name="password"
+      >
       <div class="EnregistrementBtn">
         <button type="submit" class="enregistrerBtn">Se Connecter</button>
       </div>

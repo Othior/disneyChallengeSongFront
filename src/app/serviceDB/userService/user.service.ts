@@ -1,3 +1,5 @@
+import { DbService } from './../db.service';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,21 +7,7 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
 
-  // public Othior: User = {
-  //   id : 1,
-  //   pseudo: 'Othior',
-  //   email: 'test@gmail.com',
-  //   password: 'test1234'
-  // }
-  // public Guest: User = {
-  //   id : 2,
-  //   pseudo: 'Guest',
-  //   email: 'guest@gmail.com',
-  //   password: 'guest1234'
-  // }
-
-  public listUser: Array<User> =
-  [
+  public listUser: Array<User> = [
     {
     id : 1,
     pseudo: 'Othior',
@@ -40,7 +28,28 @@ export class UserService {
     }
   ]
 
-  constructor() { }
+  public url: string;
+  constructor(
+    private client: HttpClient,
+    private db: DbService
+  ) {
+    this.url = this.db.UrlDB + "user/"
+   }
+
+  getList(){
+    return this.client.get(this.url + "list/");
+  }
+
+  get(id: number){
+    return this.client.get(this.url + "read/" + id );
+  }
+
+  vote(id: number,vote: string){
+    let params = new HttpParams().set("f",vote);
+    this.client.get(this.url + "read/" + id , { params });
+  }
+
+
 }
 
 export interface User {
