@@ -24,3 +24,8 @@ export interface UserLogin {
   pseudo: string,
   password: string,
 }
+export interface createUser {
+  email: string,
+  pseudo: string,
+  password: string,
+}

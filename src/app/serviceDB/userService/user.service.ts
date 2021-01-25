@@ -1,6 +1,7 @@
 import { DbService } from './../db.service';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { createUser } from 'src/app/Model/interface';
 
 @Injectable({
   providedIn: 'root'
@@ -47,6 +48,10 @@ export class UserService {
   vote(id: number,vote: string){
     let params = new HttpParams().set("f",vote);
     this.client.get(this.url + "read/" + id , { params });
+  }
+
+  create(user: createUser){
+    return this.client.post(this.url + 'create',user,{ responseType: 'type' as 'json' });
   }
 
 

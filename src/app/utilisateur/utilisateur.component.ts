@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UtilisateurComponent implements OnInit {
 
+  public msgError: string;
+  public statusEror: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+
+  public message(value: string){
+    this.statusEror = true;
+    this.msgError = value;
   }
 
 }

@@ -1,3 +1,4 @@
+import { CryptageService } from './../../cryptageService/cryptage.service';
 import { Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { UserService } from './../../serviceDB/userService/user.service';
@@ -19,7 +20,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private userService: UserService,
     public service: ServiceService,
-    private router: Router
+    private router: Router,
+    private cryptage: CryptageService
   ) { }
 
   ngOnInit(): void {
@@ -33,7 +35,8 @@ export class LoginComponent implements OnInit {
     this.userService.getList().subscribe( data => {
         let listUser: any = data;
         listUser.map( el => {
-          if(el.pseudo === valueForm.pseudo && el.password === valueForm.password){
+          let passwordNotHash = this.cryptage.get('123456$#@$^@1ERF',el.password);
+          if(el.pseudo === valueForm.pseudo && passwordNotHash === valueForm.password){
             localStorage.setItem("User",JSON.stringify(valueForm.pseudo));
             this.router.navigate(['home']);
           }

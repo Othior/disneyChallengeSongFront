@@ -40,3 +40,10 @@
 input{
   margin: 1rem 0rem;
 }
+
+.msgError{
+  width: 100%;
+  text-align: center;
+  color: red;
+  padding: 10px;
+}

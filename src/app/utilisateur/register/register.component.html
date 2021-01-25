@@ -1,15 +1,43 @@
 <div class="containerRegister">
   <div class="registerBlock Block">
     <h2 class="titleRegister">Enregistrement :</h2>
-    <form class="formulaireBlock">
+    <form class="formulaireBlock" #f="ngForm" (ngSubmit)="create(f)" novalidate>
       <label for="">Pseudo:</label>
-      <input type="text" class="inputBlock" placeholder="Pseudo">
+      <input
+        #model="ngModel"
+        ngModel
+        name="pseudo"
+        type="text"
+        class="inputBlock"
+        placeholder="Pseudo"
+      >
       <label for="">Email:</label>
-      <input type="email" class="inputBlock" placeholder="Email">
+      <input
+        ngModel
+        name="email"
+        type="email"
+        class="inputBlock"
+        placeholder="Email"
+      >
       <label for="">Password:</label>
-      <input type="password" class="inputBlock" placeholder="Password">
+      <input
+        ngModel
+        name="password"
+        type="password"
+        class="inputBlock"
+        placeholder="Password"
+      >
       <label for="">Confirme Password:</label>
-      <input type="password" class="inputBlock" placeholder="Confirme password">
+      <input
+        ngModel
+        name="confirmePassword"
+        type="password"
+        class="inputBlock"
+        placeholder="Confirme password"
+      >
+      <div class="verif" *ngIf="statusEror">
+        <p class="msgError"> {{ msgError }} </p>
+      </div>
       <div class="EnregistrementBtn">
         <button type="submit" class="enregistrerBtn">S'enregistrer</button>
       </div>
