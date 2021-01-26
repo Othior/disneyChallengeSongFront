@@ -1,3 +1,4 @@
+import { ServiceService } from 'src/app/utilisateurService/service.service';
 import { Router } from '@angular/router';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
@@ -25,16 +26,23 @@ export class RoueComponent implements OnInit {
   public roue: any;
   public rollNumber;
   public GageArray;
+  public user: string;
 
   public lengthGageArray: number = 4;
 
   constructor(
     private service : RoueService,
-    private router: Router
+    private router: Router,
+    private userService: ServiceService
   ) { }
 
   ngOnInit(): void {
-    this.Gage();
+    if(this.user === null){
+      alert(" Vous n'avez pas de compte vous allez etre rediriger ");
+      this.router.navigate(['login']);
+    }else{
+      this.Gage();
+    }
   }
 
   Gage(){

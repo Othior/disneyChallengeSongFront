@@ -3,7 +3,7 @@
   <div class="isUser">
     <span>{{ isUser() }}</span>
     <label class="userIcon" *ngIf="user !== null">
-      <i class="fas fa-user-times"></i>
+      <span class="logout" (click)="deconnexion()">Déconnexion <i class="fas fa-user-times"></i></span>
     </label>
     <label class="userIcon" *ngIf="user === null">
       <i class="fa fa-user"></i>

@@ -16,14 +16,17 @@
 .formulaireBlock{
   padding: 0rem 4rem;
   width: 60rem;
+  margin-top: 5rem;
 }
 .EnregistrementBtn{
   width: 50rem;
   display: flex;
   justify-content: center;
+  /* margin: 1rem 0rem; */
+  /* padding: 1rem 0rem; */
 }
 .enregistrerBtn{
-  margin: 1rem 0rem;
+  margin: 2rem 0rem;
 }
 .titleRegle{
   margin: 2rem 2rem;
@@ -38,5 +41,11 @@
   height: 38rem;
 }
 input{
-  margin: 3rem 0rem;
+  margin: 2rem 0rem;
+}
+.msgError{
+  width: 100%;
+  text-align: center;
+  color: red;
+  padding: 10px;
 }

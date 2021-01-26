@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,7 +10,9 @@ export class NavbarComponent implements OnInit {
 
   public user = JSON.parse(localStorage.getItem("User"));
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     console.log(this.user);
@@ -20,6 +23,11 @@ export class NavbarComponent implements OnInit {
     }else{
       return "Pas de compte"
     }
+  }
+  public deconnexion(){
+    localStorage.removeItem("User");
+    console.log("deconnexion !! ");
+    window.location.href="/login";
   }
 
 

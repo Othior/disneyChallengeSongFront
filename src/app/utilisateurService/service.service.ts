@@ -5,6 +5,9 @@ import { regle } from '../Model/interface';
   providedIn: 'root'
 })
 export class ServiceService {
+
+  public user = JSON.parse(localStorage.getItem("User"));
+
   private enonce: regle = {
     title:'Règles du jeu',
     description:`Vous possédez une carte avec une image d'un personnage Disney ,

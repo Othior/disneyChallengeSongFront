@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { CryptageService } from './../../cryptageService/cryptage.service';
 import { createUser } from './../../Model/interface';
 import { NgForm } from '@angular/forms';
@@ -18,15 +19,16 @@ export class RegisterComponent implements OnInit {
   constructor(
     public service: ServiceService,
     private user: UserService,
-    private cryptage: CryptageService
+    private cryptage: CryptageService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
-    // var encrypted = this.cryptage.set('123456$#@$^@1ERF', 'test12345');
-    // var decrypted = this.cryptage.get('123456$#@$^@1ERF', encrypted);
+    var encrypted = this.cryptage.set('123456$#@$^@1ERF', 'ERt2541');
+    var decrypted = this.cryptage.get('123456$#@$^@1ERF', encrypted);
 
-    // console.log('Encrypted :' + encrypted);
-    // console.log('Encrypted :' + decrypted);
+    console.log('Encrypted :' + encrypted);
+    console.log('Encrypted :' + decrypted);
   }
 
   create(formulaire: NgForm) {
@@ -46,9 +48,12 @@ export class RegisterComponent implements OnInit {
           password:this.cryptage.set('123456$#@$^@1ERF', userForm.password)
         }
 
-        this.user.create(user).subscribe(data=>{
-          console.log(data);
-        });
+        this.user.create(user).subscribe();
+        setTimeout(()=>{
+          localStorage.setItem("User",JSON.stringify(userForm.pseudo));
+          window.location.href="/home";
+          this.router.navigate(['home']);
+        },3000)
       }else {
         console.log('se ne sont pas les meme password :( ');
         // this.statusEror = true;

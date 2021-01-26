@@ -1,3 +1,4 @@
+import { ServiceService } from 'src/app/utilisateurService/service.service';
 import { IsTrue } from './../Model/interface';
 import { User, UserService } from './../serviceDB/userService/user.service';
 import { Component, OnInit } from '@angular/core';
@@ -14,6 +15,7 @@ export class VoteComponent implements OnInit {
   public listUser = this.serviceUser;
   public pseudo: string;
   listTrue: Array<IsTrue> = [];
+  public user: string;
 
   //----------//
   // READONLY //
@@ -22,11 +24,17 @@ export class VoteComponent implements OnInit {
 
   constructor(
     private serviceUser : UserService,
-    private router: Router
-  ) { }
+    private router: Router,
+    private userService: ServiceService
+  ) {
+    this.user = this.userService.user;
+  }
 
   ngOnInit(): void {
-
+    if(this.user === null){
+      alert(" Vous n'avez pas de compte vous allez etre rediriger ");
+      this.router.navigate(['login']);
+    }
   }
 
   changeTrueOrFalse(){

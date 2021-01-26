@@ -1,3 +1,5 @@
+import { ServiceService } from 'src/app/utilisateurService/service.service';
+import { UserService } from './../serviceDB/userService/user.service';
 import { CarteService } from './../serviceDB/carteService/carte.service';
 
 import { Component, OnInit } from '@angular/core';
@@ -14,7 +16,7 @@ export class CarteComponent implements OnInit {
   public carte;
   protected rollNumber: number;
   public temps: number;
-
+  public user: string;
   public timmer; // contient la boucle du temps et permet aussi de la stoper
 
   public readonly lengthCarteArray = 30;
@@ -22,14 +24,19 @@ export class CarteComponent implements OnInit {
 
   constructor(
     private service: CarteService,
-    private router: Router
+    private router: Router,
+    private userService: ServiceService
   ) {
-    // this.rollCard();
-    // service.get()
+    this.user = this.userService.user;
   }
 
   ngOnInit(): void {
-    this.Jeux();
+    if(this.user === null){
+      alert(" Vous n'avez pas de compte vous allez etre rediriger ");
+      this.router.navigate(['/login']);
+    }else{
+      this.Jeux();
+    }
   }
 
   // function qui recommence tout change la carte mais aussi remet le temps aux max

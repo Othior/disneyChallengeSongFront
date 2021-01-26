@@ -1,3 +1,4 @@
+import { CryptageService } from './cryptageService/cryptage.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -40,7 +41,7 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [CryptageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

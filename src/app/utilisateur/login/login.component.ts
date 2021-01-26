@@ -17,6 +17,9 @@ export class LoginComponent implements OnInit {
 
   // private listUser: any;
 
+  public msgError: string;
+  public statusEror: boolean = false;
+
   constructor(
     private userService: UserService,
     public service: ServiceService,
@@ -36,13 +39,32 @@ export class LoginComponent implements OnInit {
         let listUser: any = data;
         listUser.map( el => {
           let passwordNotHash = this.cryptage.get('123456$#@$^@1ERF',el.password);
-          if(el.pseudo === valueForm.pseudo && passwordNotHash === valueForm.password){
-            localStorage.setItem("User",JSON.stringify(valueForm.pseudo));
-            this.router.navigate(['home']);
+          if(valueForm.pseudo !== "" && valueForm.password !== ""){
+            if(el.pseudo === valueForm.pseudo && passwordNotHash === valueForm.password){
+              setTimeout(() => {
+                console.log("setimout")
+                localStorage.setItem("User",JSON.stringify(valueForm.pseudo));
+                window.location.href="/home";
+                this.router.navigate(['home']);
+              },3000)
+              this.statusEror = false;
+              this.msgError = '';
+            }
+            else{
+              this.message(' Mauvaise pseudo ou mauvaise mot de passe ');
+            }
           }
+          else{
+            this.message('Veuillez remplir tout les champs du formulaire !! ');
+          }
+
         });
     });
 
+  }
+  private message(value: string){
+    this.statusEror = true;
+    this.msgError = value;
   }
 
 }

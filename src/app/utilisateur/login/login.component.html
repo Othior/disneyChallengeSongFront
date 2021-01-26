@@ -19,6 +19,9 @@
         ngModel
         name="password"
       >
+      <div class="verif" *ngIf="statusEror">
+        <p class="msgError"> {{ msgError }} </p>
+      </div>
       <div class="EnregistrementBtn">
         <button type="submit" class="enregistrerBtn">Se Connecter</button>
       </div>
