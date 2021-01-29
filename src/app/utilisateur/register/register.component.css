@@ -47,3 +47,7 @@ input{
   color: red;
   padding: 10px;
 }
+.plusInfo{
+  text-align: center;
+  /* padding: 1rem; */
+}

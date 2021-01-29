@@ -18,6 +18,7 @@ import { RoueComponent } from './roue/roue.component';
 import { VoteComponent } from './vote/vote.component';
 import { TableauScoreComponent } from './tableau-score/tableau-score.component';
 import { HomeComponent } from './home/home.component';
+import { InfoJeuComponent } from './info-jeu/info-jeu.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { HomeComponent } from './home/home.component';
     RoueComponent,
     VoteComponent,
     TableauScoreComponent,
-    HomeComponent
+    HomeComponent,
+    InfoJeuComponent
   ],
   imports: [
     BrowserModule,

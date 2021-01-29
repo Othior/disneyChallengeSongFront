@@ -24,11 +24,11 @@ export class RegisterComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    var encrypted = this.cryptage.set('123456$#@$^@1ERF', 'ERt2541');
-    var decrypted = this.cryptage.get('123456$#@$^@1ERF', encrypted);
+    // var encrypted = this.cryptage.set('123456$#@$^@1ERF', 'ERt2541');
+    // var decrypted = this.cryptage.get('123456$#@$^@1ERF', encrypted);
 
-    console.log('Encrypted :' + encrypted);
-    console.log('Encrypted :' + decrypted);
+    // console.log('Encrypted :' + encrypted);
+    // console.log('Encrypted :' + decrypted);
   }
 
   create(formulaire: NgForm) {
@@ -68,4 +68,9 @@ export class RegisterComponent implements OnInit {
     this.statusEror = true;
     this.msgError = value;
   }
+
+  plusInfo(){
+    this.router.navigate(['info']);
+  }
+
 }

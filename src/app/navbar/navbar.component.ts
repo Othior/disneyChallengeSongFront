@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  public user = JSON.parse(localStorage.getItem("User"));
+  public user: string = JSON.parse(localStorage.getItem("User"));
+  public messageUser: string;
 
   constructor(
     private router: Router
@@ -19,9 +20,11 @@ export class NavbarComponent implements OnInit {
   }
   public isUser(): string{
     if(this.user!== null){
-      return this.user;
+      this.messageUser = this.user.toUpperCase();
+      return this.messageUser;
     }else{
-      return "Pas de compte"
+      this.messageUser = "se connecter";
+      return this.messageUser;
     }
   }
   public deconnexion(){

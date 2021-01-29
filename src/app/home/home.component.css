@@ -1,0 +1,45 @@
+.blockContainer , .btnMenu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container{
+  width: 50%;
+  height: 85vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blockContainer{
+  width: 60%;
+  height: 50vh;
+  border-radius: 10px;
+  border: 1px solid white;
+  transition: 0.5s;
+  /* box-shadow: 0 14px 28px white, 0 10px 10px white; */
+}
+
+.blockContainer:hover{
+  /* border: none; */
+  box-shadow: 0 14px 28px white, 0 10px 10px white;
+  transform: translateY(-10px);
+  transition: 0.5s;
+}
+
+.title{
+  margin: 2rem 0rem;
+  font-size: 3em;
+}
+
+.btnMenu{
+  margin: 2rem 0rem;
+}
+
+.btnMenu button {
+  margin: 2rem 0rem;
+  font-size: 2em;
+}

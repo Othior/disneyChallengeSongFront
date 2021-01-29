@@ -5,6 +5,7 @@
 }
 .contenuJeu{
   width: 80vw;
+  height: 82vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;

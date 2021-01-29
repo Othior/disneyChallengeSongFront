@@ -1,14 +1,18 @@
 header{
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  justify-content: flex-end;
+  align-items: flex-end;
   padding: 2rem;
   border-bottom: 1px solid white;
+  position: relative;
+  height: 15vh;
 }
 .titleSite{
-  font-size: 75px;
-  width: 76vw;
-  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 4em;
+  padding: 26px 3rem;
 }
 .userIcon{
   margin: 0px 1rem;
@@ -16,4 +20,11 @@ header{
 .isUser{
   font-size: 25px;
   /* padding-left: 15rem; */
+}
+.pseudoUser{
+  margin: 0rem 1rem;
+}
+.logout{
+  cursor: pointer;
+  text-decoration: underline;
 }

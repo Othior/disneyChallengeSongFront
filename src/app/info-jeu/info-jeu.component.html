@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="cardBlock" *ngFor="let item of carte">
+    <div class="carte Block" *ngIf="carte !== undefined">
+      <img src="{{ item.url }}" alt="{{ item.name }}" class="imageCarte">
+      <div class="nomCarte">{{ item.name }}</div>
+    </div>
+  </div>
+</div>

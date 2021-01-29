@@ -1,3 +1,4 @@
+import { InfoJeuComponent } from './info-jeu/info-jeu.component';
 import { VoteComponent } from './vote/vote.component';
 
 import { NgModule } from '@angular/core';
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path:'vote' , component: VoteComponent },
   { path:'roue' , component: RoueComponent },
   { path:'home', component:HomeComponent },
+  { path: 'info' , component: InfoJeuComponent},
   { path: '**' , component: NotFoundComponent }
 ];
 

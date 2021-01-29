@@ -20,7 +20,7 @@ export class CarteComponent implements OnInit {
   public timmer; // contient la boucle du temps et permet aussi de la stoper
 
   public readonly lengthCarteArray = 30;
-  private readonly tempsMax: number = 30;
+  private readonly tempsMax: number = 15;
 
   constructor(
     private service: CarteService,

@@ -1,12 +1,14 @@
 <header>
   <h1 class="titleSite">Disney Challenge Song</h1>
   <div class="isUser">
-    <span>{{ isUser() }}</span>
+    <!-- <span>{{ isUser() }}</span> -->
     <label class="userIcon" *ngIf="user !== null">
-      <span class="logout" (click)="deconnexion()">Déconnexion <i class="fas fa-user-times"></i></span>
+      <span class="pseudoUser">{{ isUser() }}</span>
+      <a class="logout" (click)="deconnexion()">  Déconnexion <i class="fas fa-user-times"></i></a>
     </label>
     <label class="userIcon" *ngIf="user === null">
-      <i class="fa fa-user"></i>
+
+      <a class="logout" [routerLink]="['/login']">{{ isUser() }} <i class="fa fa-user"></i></a>
     </label>
   </div>
 </header>

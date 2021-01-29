@@ -66,5 +66,8 @@ export class LoginComponent implements OnInit {
     this.statusEror = true;
     this.msgError = value;
   }
+  plusInfo(){
+    this.router.navigate(['info']);
+  }
 
 }

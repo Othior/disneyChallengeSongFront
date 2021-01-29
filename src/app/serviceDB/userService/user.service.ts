@@ -1,5 +1,5 @@
 import { DbService } from './../db.service';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { createUser } from 'src/app/Model/interface';
 
@@ -45,13 +45,18 @@ export class UserService {
     return this.client.get(this.url + "read/" + id );
   }
 
-  vote(id: number,vote: string){
-    let params = new HttpParams().set("f",vote);
-    this.client.get(this.url + "read/" + id , { params });
+  vote(vote: string){
+    let params = new HttpParams().set("Vote",vote);
+    // this.client.get(this.url + "read/" + id , { params });
   }
 
   create(user: createUser){
     return this.client.post(this.url + 'create',user,{ responseType: 'type' as 'json' });
+  }
+  delete(id:number){
+    // let headers = new HttpHeaders().set('Authorization','Basic flisbtklvihe');
+    // return this.client.delete(this.url + 'delete/' + id ,{ headers: headers, responseType: 'type' as 'json'});
+    // return this.client.delete(this.url + 'delete/' + id ,{ responseType: 'type' as 'json'});
   }
 
 

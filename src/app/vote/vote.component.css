@@ -2,9 +2,11 @@
   display: flex;
   justify-content: space-around;
   /* position: relative; */
+  height: 85vh;
 }
 .contenuJeu{
   width: 80vw;
+  height: 85vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -12,7 +14,7 @@
 }
 .titleVote{
   font-size: 3em;
-  margin: 2rem 0rem;
+  margin: 3rem 0rem;
   text-decoration: underline;
   font-style: italic;
 }
@@ -70,6 +72,9 @@
 }
 .btnValider{
   margin: 2rem 0rem;
+}
+.btnValider button {
+  font-size: 2em;
 }
 .active{
   background-color: #B31C23;

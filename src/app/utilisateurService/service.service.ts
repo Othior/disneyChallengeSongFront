@@ -13,7 +13,7 @@ export class ServiceService {
     description:`Vous possédez une carte avec une image d'un personnage Disney ,
     il vous suffit juste de chanter une ou deux phrases de la chanson au quel
     appartient le personnage si vous ne chantez pas la bonne chanson vous allez
-    devoir faire un gage à l'aide de la roue des gages`
+    devoir faire un gage à l'aide de la roue des gages ...`
   }
   constructor() { }
   get Enonce(): regle{

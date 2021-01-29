@@ -1,10 +1,11 @@
 .tableauScore{
   width: 22vw;
-  height: 83vh;
+  height: 85vh;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   border-left: 1px solid white;
+  border-bottom: 1px solid white;
 }
 .pseudo{
   width: 20vw;

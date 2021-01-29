@@ -5,7 +5,6 @@ html{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 83vh;
 }
 .contenuJeu{
   width: 80vw;
@@ -28,7 +27,10 @@ html{
   margin: 2rem 0rem;
   font-size: 5em;
 }
-
+.btnMenu button {
+  font-size: 2em;
+  margin: 0rem 1rem;
+}
 .slideInDown {
   -webkit-animation-name: slideInDown;
   animation-name: slideInDown;

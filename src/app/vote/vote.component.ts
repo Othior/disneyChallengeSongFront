@@ -23,7 +23,7 @@ export class VoteComponent implements OnInit {
   public readonly scoreGood = 125;
 
   constructor(
-    private serviceUser : UserService,
+    private serviceUser: UserService,
     private router: Router,
     private userService: ServiceService
   ) {
@@ -31,72 +31,80 @@ export class VoteComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if(this.user === null){
+    if (this.user === null) {
       alert(" Vous n'avez pas de compte vous allez etre rediriger ");
       this.router.navigate(['login']);
     }
   }
 
-  changeTrueOrFalse(){
+  private changeTrueOrFalse() {
     return this.check = !this.check
   }
 
-  isChecked(isTrue: boolean , value: string): IsTrue {
+  private isChecked(isTrue: boolean, value: string): IsTrue {
 
-    if(isTrue){
-      let user: IsTrue ={
+    if (isTrue) {
+      let user: IsTrue = {
         check: true,
         value: value
       }
       return user;
-    }else{
-      let user: IsTrue ={
-        check: false,
-        value: value
-      }
-      return user;
     }
+    return null;
 
   }
 
-  changeStatut(value){
-    let spanCheckbox: HTMLElement = document.querySelector("#user_span_"+value);
-    let checkbox: HTMLInputElement = document.querySelector("#user_"+value);
+  public changeStatut(value) {
+    let spanCheckbox: HTMLElement = document.querySelector("#user_span_" + value);
+    let checkbox: HTMLInputElement = document.querySelector("#user_" + value);
 
-    if( checkbox.value === checkbox.name ){
-      if(!spanCheckbox.classList.contains("active")){
+    if (checkbox.value === checkbox.name) {
+      if (!spanCheckbox.classList.contains("active")) {
         spanCheckbox.classList.add("active");
         checkbox.checked = true;
-         this.listTrue.push( this.isChecked(checkbox.checked,value) );
-        console.log('checked if => ',checkbox.checked);
+        this.listTrue.push(this.isChecked(checkbox.checked, value));
       }
-      else{
-        console.log('checked else => ',checkbox.checked);
+      else {
 
-        // this.listTrue.forEach(element => {
-        //     if(element.value === value){
-        //       delete this.listTrue[value];
-        //       console.log(value);
-        //       console.log("listTrue => ", this.listTrue);
-        //     }
-        // });
+        // creation element istrue pour le retrouver dans la listTrue
+        let vote :IsTrue = {
+          check: true,
+          value: value
+        }
+
+        //systeme de suppression d'element dans la listTrue
+        const index: number = this.listTrue.indexOf(vote);
+        this.listTrue.splice(index, 1);
+        // console.log("listTrue => ", this.listTrue);
 
 
+        // checkbox deviens rouge
         spanCheckbox.classList.remove("active");
         checkbox.checked = false;
       }
     }
-
     this.check = checkbox.checked;
     this.pseudo = value;
+    console.log("listTrue => ", this.listTrue);
+    // console.log("checkbox => ", this.check);
   }
 
-  valider(){
+  public valider() {
 
-    console.log('test => ',this.listTrue);
+    console.log('test => ', this.listTrue);
+
     // localStorage.setItem(this.pseudo,JSON.stringify(this.check));
     // this.serviceUser.vote(1,JSON.parse(localStorage.getItem(this.pseudo)));
-    this.router.navigate(['roue']);
+
+
+    console.log('list taille => ',  this.listTrue.length);
+    if(this.listTrue.length === 0){
+      console.log("carte")
+      this.router.navigate(['carte']);
+    }else{
+      console.log("roue")
+      this.router.navigate(['roue']);
+    }
   }
 }
 
