@@ -29,3 +29,18 @@ export interface createUser {
   pseudo: string,
   password: string,
 }
+export interface updateUser {
+  email: string,
+  pseudo: string,
+  password: string,
+  score: number
+}
+export interface scoreUser {
+  score: number,
+  user: User
+}
+
+export interface Room{
+  name: string,
+  user: User
+}

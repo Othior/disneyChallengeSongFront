@@ -7,7 +7,7 @@
   <div class="contenuJeu">
     <h2 class="titleGage"> Gage : </h2>
     <div class="gageBlock">
-      <div class="gageMessage slideInDown">{{ roue.gage }}</div>
+      <div class="gageMessage slideInDown" *ngIf="roue !== undefined">{{ roue.gage }}</div>
     </div>
     <div class="btnMenu">
       <button (click)="Gage()">Recevoir un autre Gage</button>

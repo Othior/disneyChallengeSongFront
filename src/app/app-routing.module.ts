@@ -9,6 +9,7 @@ import { RoueComponent } from './roue/roue.component';
 import { LoginComponent } from './utilisateur/login/login.component';
 import { RegisterComponent } from './utilisateur/register/register.component';
 import { HomeComponent } from './home/home.component';
+import { RoomComponent } from './room/room.component';
 
 const routes: Routes = [
   { path:'', component:RegisterComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path:'roue' , component: RoueComponent },
   { path:'home', component:HomeComponent },
   { path: 'info' , component: InfoJeuComponent},
+  { path: 'room/:nom' , component: RoomComponent},
   { path: '**' , component: NotFoundComponent }
 ];
 

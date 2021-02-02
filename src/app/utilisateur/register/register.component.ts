@@ -24,11 +24,9 @@ export class RegisterComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // var encrypted = this.cryptage.set('123456$#@$^@1ERF', 'ERt2541');
-    // var decrypted = this.cryptage.get('123456$#@$^@1ERF', encrypted);
-
-    // console.log('Encrypted :' + encrypted);
-    // console.log('Encrypted :' + decrypted);
+    if(this.service.user !== null){
+      this.router.navigate(['home']);
+    }
   }
 
   create(formulaire: NgForm) {

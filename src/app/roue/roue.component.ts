@@ -26,7 +26,7 @@ export class RoueComponent implements OnInit {
   public roue: any;
   public rollNumber;
   public GageArray;
-  public user: string;
+  public user: string ;
 
   public lengthGageArray: number = 4;
 
@@ -34,7 +34,9 @@ export class RoueComponent implements OnInit {
     private service : RoueService,
     private router: Router,
     private userService: ServiceService
-  ) { }
+  ) {
+    this.user = userService.user
+   }
 
   ngOnInit(): void {
     if(this.user === null){
@@ -51,7 +53,7 @@ export class RoueComponent implements OnInit {
     this.service.get(this.rollNumber).toPromise()
       .then(data => {
         this.roue = data;
-        console.log("data =>" , this.roue.gage);
+        // console.log("data =>" , this.roue.gage);
       })
       .catch(err => {
         console.log('error Carte component => ', err)

@@ -28,6 +28,9 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    if(this.service.user !== null){
+      this.router.navigate(['home']);
+    }
 
   }
 
@@ -41,12 +44,11 @@ export class LoginComponent implements OnInit {
           let passwordNotHash = this.cryptage.get('123456$#@$^@1ERF',el.password);
           if(valueForm.pseudo !== "" && valueForm.password !== ""){
             if(el.pseudo === valueForm.pseudo && passwordNotHash === valueForm.password){
-              setTimeout(() => {
-                console.log("setimout")
-                localStorage.setItem("User",JSON.stringify(valueForm.pseudo));
-                window.location.href="/home";
-                this.router.navigate(['home']);
-              },3000)
+              localStorage.setItem("User",JSON.stringify(el.pseudo));
+              localStorage.setItem("UserId",JSON.stringify(el.id));
+              window.location.href="/home";
+              this.router.navigate(['home']);
+
               this.statusEror = false;
               this.msgError = '';
             }

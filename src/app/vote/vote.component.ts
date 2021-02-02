@@ -85,19 +85,19 @@ export class VoteComponent implements OnInit {
     }
     this.check = checkbox.checked;
     this.pseudo = value;
-    console.log("listTrue => ", this.listTrue);
+    // console.log("listTrue => ", this.listTrue);
     // console.log("checkbox => ", this.check);
   }
 
   public valider() {
 
-    console.log('test => ', this.listTrue);
+    // console.log('test => ', this.listTrue);
 
     // localStorage.setItem(this.pseudo,JSON.stringify(this.check));
     // this.serviceUser.vote(1,JSON.parse(localStorage.getItem(this.pseudo)));
 
 
-    console.log('list taille => ',  this.listTrue.length);
+    // console.log('list taille => ',  this.listTrue.length);
     if(this.listTrue.length === 0){
       console.log("carte")
       this.router.navigate(['carte']);

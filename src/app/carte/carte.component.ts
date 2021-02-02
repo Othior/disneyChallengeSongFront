@@ -17,6 +17,7 @@ export class CarteComponent implements OnInit {
   protected rollNumber: number;
   public temps: number;
   public user: string;
+  public listCarte: Array<number>;
   public timmer; // contient la boucle du temps et permet aussi de la stoper
 
   public readonly lengthCarteArray = 30;
@@ -65,7 +66,7 @@ export class CarteComponent implements OnInit {
         time--;
       }
       else{
-        console.log("arreter => ", time);
+        // console.log("arreter => ", time);
         this.cancelBoucleTimer();
         this.router.navigate(["vote"]);
       }
@@ -80,9 +81,13 @@ export class CarteComponent implements OnInit {
   //function qui permet de changer la carte
   private rollCard() {
     this.rollNumber = Math.floor((Math.random() * this.lengthCarteArray) + 1);
+
     this.service.get(this.rollNumber).toPromise()
       .then(data => {
         this.carte = data;
+        // console.log("data",data['id']);
+        // this.listCarte.push(data['id']);
+        // localStorage.setItem("listCarte",JSON.stringify(this.listCarte));
       })
       .catch(err => {
         console.log('error Carte component => ', err)

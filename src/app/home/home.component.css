@@ -16,7 +16,7 @@
 
 .blockContainer{
   width: 60%;
-  height: 50vh;
+  height: 60vh;
   border-radius: 10px;
   border: 1px solid white;
   transition: 0.5s;
@@ -40,6 +40,35 @@
 }
 
 .btnMenu button {
-  margin: 2rem 0rem;
+  /* margin: 2rem 0rem; */
+  /* font-size: 2em; */
+}
+.createSession{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.titleCreate{
+  text-align: center;
   font-size: 2em;
+}
+.createInput{
+  width: 100%;
+  height: 55px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border: none;
+}
+.btnCreate{
+  font-size: 1em;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+
+}
+.btnRejoindre{
+  font-size: 2em;
+  margin: 2rem 0rem;
 }

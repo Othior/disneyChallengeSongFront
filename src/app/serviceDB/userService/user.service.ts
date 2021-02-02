@@ -1,7 +1,7 @@
 import { DbService } from './../db.service';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { createUser } from 'src/app/Model/interface';
+import { createUser, updateUser } from 'src/app/Model/interface';
 
 @Injectable({
   providedIn: 'root'
@@ -57,6 +57,9 @@ export class UserService {
     // let headers = new HttpHeaders().set('Authorization','Basic flisbtklvihe');
     // return this.client.delete(this.url + 'delete/' + id ,{ headers: headers, responseType: 'type' as 'json'});
     // return this.client.delete(this.url + 'delete/' + id ,{ responseType: 'type' as 'json'});
+  }
+  update(id: number, user: updateUser){
+    return this.client.put(this.url + 'update' + id, user,{ responseType: 'type' as 'json' });
   }
 
 

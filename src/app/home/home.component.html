@@ -2,8 +2,28 @@
   <div class="blockContainer">
     <h2 class="title"> Accueil </h2>
     <div class="btnMenu">
-      <button [routerLink]="['/carte']">Rejoindre Partie</button>
-      <!-- <button [routerLink]="['carte']">Créer Partie</button> -->
+      <button class="btnRejoindre" [routerLink]="['/carte']">Rejoindre Aléatoire</button>
+      <div class="createSession">
+        <input
+          [(ngModel)]="rejoindreInput"
+          type="text"
+          name="rejoindreInput"
+          class="createInput"
+          placeholder="Nom de la Partie"
+        >
+        <button class="btnCreate" (click)="rejoindreRoom()">Rejoindre</button>
+      </div>
+      <!-- <h2 class="titleCreate">Création Partie:</h2> -->
+      <div class="createSession">
+        <input
+          [(ngModel)]="creationInput"
+          type="text"
+          name="creationInput"
+          class=" createInput"
+          placeholder="Nom de la Partie"
+        >
+        <button class="btnCreate" (click)="createRoom()">Créer</button>
+      </div>
     </div>
   </div>
 </div>

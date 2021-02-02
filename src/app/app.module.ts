@@ -19,6 +19,7 @@ import { VoteComponent } from './vote/vote.component';
 import { TableauScoreComponent } from './tableau-score/tableau-score.component';
 import { HomeComponent } from './home/home.component';
 import { InfoJeuComponent } from './info-jeu/info-jeu.component';
+import { RoomComponent } from './room/room.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { InfoJeuComponent } from './info-jeu/info-jeu.component';
     VoteComponent,
     TableauScoreComponent,
     HomeComponent,
-    InfoJeuComponent
+    InfoJeuComponent,
+    RoomComponent
   ],
   imports: [
     BrowserModule,
